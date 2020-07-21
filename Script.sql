@@ -55,4 +55,30 @@ insert into Herramientas Values
 ("NetBeans","https://netbeans.org/","Entorno de desarrollo para diversos lenguajes, en especial Java."),
 ("ChromeDevTools","https://developers.google.com/web/tools/chrome-devtools","Conjunto de herramientas para desarrollo web directamente en Google Chrome."),		
 ("Atom","https://atom.io/","Aplicacion de esctritorio para principalmente desarrollo web."),
-("Visual Studio","https://visualstudio.microsoft.com/vs/community/","Entorno de desarrollo muy versatil para diferentes lenguajes y abarcar diferentes plataformas.")
+("Visual Studio","https://visualstudio.microsoft.com/vs/community/","Entorno de desarrollo muy versatil para diferentes lenguajes y abarcar diferentes plataformas.");
+
+#21
+insert into PropiedadHerramienta (Nombre,Descripcion,Herramienta) Values
+("Como usar","Tutorial basico de cómo usar Git/Guthub","Github"),
+("Comandos","Comandos de git para usar en tus repos","Github"),
+("Tips","Consejos para usar Git/Guthub","Github"),
+("Como usar","Tutorial basico de cómo usar Netbeans","Netbeans"),
+("Interfaz","Vista general de la Interfaz de Netbeans","Netbeans"),
+("Como usar","Tutorial basico de cómo usar Devtools","ChromeDevTools"),
+("Tips","Consejos para usar Devtools","ChromeDevTools"),
+("Como usar","Tutorial basico de cómo usar Atom","Atom"),
+("Interfaz","Vista general de la Interfaz de Atom","Atom"),
+("Como usar","Tutorial basico de cómo usar Visual Studio","Visual Studio"),
+("Interfaz","Vista general de la Interfaz de Visual Studio","Visual Studio");
+
+insert into PropiedadLenguaje (Nombre,Descripcion,Lenguaje) Values
+("Sintaxis","Sintaxis basica de Python","Python"),
+("Sintaxis","Sintaxis basica de Java","Java"),
+("Sintaxis","Sintaxis basica de C#","C#"),
+("Ventajas","Ventajas principales al usar Python","Python"),
+("Ventajas","Ventajas principales al usar Java","Java"),
+("Ventajas","Ventajas principales al usar C#","C#"),
+("Documentacion","Documentacion oficial de Python","Python"),
+("Documentacion","Documentacion oficial de Java","Java"),
+("Documentacion","Documentacion oficial de C#","C#");
+

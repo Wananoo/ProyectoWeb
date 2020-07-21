@@ -34,7 +34,7 @@
                 Selecciona un lenguaje del cual quieres aprender:
             </p>
         </div>
-        <form>
+        <form action="ObtenerL">
             <button class="botonlenguaje" onclick="submit();" name="Leng" value="Python">  
             <img class="icono" width="30" height="25" src="ico/icono-python.png">Python</button>
             <button class="botonlenguaje" onclick="submit();" name="Leng" value="Java">  
@@ -44,17 +44,7 @@
         </form>
         <br>
         <%
-            String Leng = request.getParameter("Leng");
-            if(Leng==null){Leng="";}
-            switch (Leng)
-            {
-                case "Python":
-                            {
-                                
-                                break;
-                            }
-                default: break;
-            }
+            
         %>
         </div>
     </body>
