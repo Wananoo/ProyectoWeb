@@ -6,16 +6,14 @@ create table Lenguajes
 Nombre varchar(30) primary key not null,
 Dificultad int not null
 );
-
 create table PropiedadLenguaje
 (
-ID int primary key not null,
+ID int primary key not null AUTO_INCREMENT,
 Nombre varchar(30) not null,
 Descripcion text not null,
 Lenguaje varchar(30),
 constraint FK_Propiedad_Lenguaje foreign key (Lenguaje) references Lenguajes(Nombre)
 );
-
 create table Herramientas
 (
 Nombre varchar(30) primary key not null,
@@ -25,7 +23,7 @@ Descripcion text not null
 
 create table PropiedadHerramienta
 (
-ID int primary key not null,
+ID int primary key not null AUTO_INCREMENT,
 Nombre varchar(30) not null,
 Descripcion text not null,
 Herramienta varchar(30),
@@ -81,4 +79,3 @@ insert into PropiedadLenguaje (Nombre,Descripcion,Lenguaje) Values
 ("Documentacion","Documentacion oficial de Python","Python"),
 ("Documentacion","Documentacion oficial de Java","Java"),
 ("Documentacion","Documentacion oficial de C#","C#");
-
