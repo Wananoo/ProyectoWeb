@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Jul 18, 2020, 8:59:03 PM
+    Document   : Acerca
+    Created on : Jul 24, 2020, 5:11:17 AM
     Author     : wanan
 --%>
 
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DevHelp</title>
+        <title>Acerca</title>
     </head>
     
     <body>
@@ -29,7 +29,7 @@
         Acerca de</a>
 </div>
         <div class="main">
-        <h1>DevHelp</h1>
+        <h1>Acerca de</h1>
         <br>
         <div>
             <p class="subtit">

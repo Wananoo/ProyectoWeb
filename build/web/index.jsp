@@ -23,9 +23,9 @@
        Lenguajes</a>
   <a href="Herramientas.jsp"><img class="icono" width="30" height="25" src="ico/icono-herramientas.png" alt="Herramientas">
       Herramientas</a>
-  <a href="#"><img class="icono" width="30" height="25" src="ico/icono-contacto.png" alt="Herramientas">
+  <a href="Contacto.jsp"><img class="icono" width="30" height="25" src="ico/icono-contacto.png" alt="Herramientas">
       Contacto</a>
-    <a href="#"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
+    <a href="Acerca.jsp"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
         Acerca de</a>
 </div>
         <div class="main">

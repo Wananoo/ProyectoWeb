@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Jul 18, 2020, 8:59:03 PM
+    Document   : Contacto
+    Created on : Jul 24, 2020, 5:10:59 AM
     Author     : wanan
 --%>
 
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DevHelp</title>
+        <title>Contacto</title>
     </head>
     
     <body>
@@ -29,12 +29,27 @@
         Acerca de</a>
 </div>
         <div class="main">
-        <h1>DevHelp</h1>
+        <h1>Contacto</h1>
         <br>
         <div>
             <p class="subtit">
-                Bienvenido/a a DevHelp!
-            </p>
+                Contactate con nosotros y danos tu retroalimentacion!</p>
+                <form action="#" method="get">
+                    Seccion: 
+                    <select  style="background-color:#383838;" onchange="submit();">
+                        <option>Sin especificar</option>
+                        <option>Lenguajes</option>
+                        <option>Herramientas</option>
+                    </select>
+                    <select>
+                        ########
+                    </select>
+                    <br>
+                    Comentario: 
+                    <BLOCKQUOTE><textarea  style="background-color:#383838;" id="texto" rows="4" cols="50"></textarea>
+                        </BLOCKQUOTE>
+                    <input  style="background-color:#383838;" type="submit" formaction="Contacto" value="Enviar" />
+                </form>
         </div>
         </div>
     </body>

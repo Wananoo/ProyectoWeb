@@ -3,15 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/index.html</file>
-            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Modelo/Consultas.java</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/Herramientas.jsp</file>
-            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/Lenguajes.jsp</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/bootstrap/css/bootstrap-theme.css.map</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/bootstrap/css/bootstrap-theme.css</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Modelo/conexion.java</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/index.jsp</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerC.java</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/Contacto.jsp</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerH.java</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/Acerca.jsp</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerE.java</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/index.html</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Modelo/Consultas.java</file>
+            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/Lenguajes.jsp</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/web/bootstrap/css/bootstrap.css</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerL.java</file>
-            <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerH.java</file>
             <file>file:/C:/Users/wanan/Documents/NetBeansProjects/ProyectoWeb/src/java/Servlet/ObtenerPropiedad.java</file>
         </group>
     </open-files>

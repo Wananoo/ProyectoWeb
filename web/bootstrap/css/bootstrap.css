@@ -116,7 +116,7 @@ select,
 textarea {
   margin: 0;
   font: inherit;
-  color: inherit;
+  color: black;
 }
 button {
   overflow: visible;
@@ -1089,6 +1089,7 @@ body {
   color: #f0f0f0;
   background-color: #383838;
 }
+
 .subtit
 {
     font-size: 16px;
@@ -1149,7 +1150,9 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+
 }
+
 a {
   color: #337ab7;
   text-decoration: none;
@@ -2650,6 +2653,7 @@ fieldset[disabled] .form-control {
 }
 textarea.form-control {
   height: auto;
+  color: black;
 }
 input[type="search"] {
   -webkit-appearance: none;

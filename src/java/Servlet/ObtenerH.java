@@ -5,8 +5,13 @@
  */
 package Servlet;
 
+import Modelo.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +63,23 @@ public class ObtenerH extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        Consultas cons = new Consultas();
+        String Herr = request.getParameter("Herr");
+        ArrayList<String> Desc = new ArrayList<String>();
+        Desc.add("");Desc.add("");
+        try {
+            Desc = cons.GetHerr(Herr);
+        } catch (SQLException ex) {
+            Desc.clear();Desc.add("catch");Desc.add("catch");
+            Logger.getLogger(ObtenerL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        request.setAttribute("Herramienta",Desc.get(0));
+        request.setAttribute("Enlace",Desc.get(1));
+        request.setAttribute("Descripcion",Desc.get(2).replaceAll("\\.\\s?", "<br>"));
+        request.setAttribute("ComoUsar",Desc.get(3).replaceAll("\\. \\s?", "<br>"));
+        request.setAttribute("Tips",Desc.get(4).replaceAll("\\.\\s?", "<br>"));
+        if(Herr.equals("Github"))request.setAttribute("Comandos",Desc.get(5).replaceAll("\\. \\s?", "<br>"));
+        request.getRequestDispatcher("Herramientas.jsp").forward(request, response);
     }
 
     /**
