@@ -11,15 +11,15 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 public class conexion {
-    public String user="root";
-    public String pass="babo997711X";
+    public String user=Datos.user;
+    public String pass=Datos.pass;
     public String host="localhost";
     public String port="3306";
     public String database="devhelp";
     public String classname="com.mysql.jdbc.Driver";
     public String url="jdbc:mysql://" +host+ ":" +port+ "/" +database;
+    
     
     
     public java.sql.Connection con;

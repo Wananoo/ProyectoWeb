@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Configurar_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -68,11 +68,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        Acerca de</a>\n");
       out.write("</div>\n");
       out.write("        <div class=\"main\">\n");
-      out.write("        <h1>DevHelp</h1>\n");
+      out.write("        <h1>Ingrese su usuario y contraseña de MySQL</h1>\n");
       out.write("        <br>\n");
       out.write("        <div>\n");
       out.write("            <p class=\"subtit\">\n");
-      out.write("                Bienvenido/a a DevHelp!\n");
+      out.write("            <form method=\"post\">\n");
+      out.write("                Usuario (root): <input placeholder=\"user\" style=\"background-color:#383838;color:white;\" type=\"text\" name=\"user\" />\n");
+      out.write("                Contraseña MySQL: <input placeholder=\"pass\" style=\"background-color:#383838;color:white;\" type=\"text\" name=\"pass\" />\n");
+      out.write("            </form>\n");
       out.write("            </p>\n");
       out.write("        </div>\n");
       out.write("        </div>\n");

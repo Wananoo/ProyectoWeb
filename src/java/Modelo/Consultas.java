@@ -18,7 +18,9 @@ import java.util.List;
 
 public class Consultas extends conexion{
     
-    public ArrayList<String> GetLeng(String L) throws SQLException
+    
+    
+    public ArrayList<String> GetLeng(String L) throws SQLException//Obtener lenguaje
     {
         String Consulta;
         Statement st=con.createStatement();
@@ -56,7 +58,7 @@ public class Consultas extends conexion{
     }
     
     
-    public ArrayList<String> GetHerr(String H) throws SQLException
+    public ArrayList<String> GetHerr(String H) throws SQLException//Obtener herramienta
     {
         String Consulta;
         Statement st=con.createStatement();
@@ -101,7 +103,7 @@ public class Consultas extends conexion{
         
         return LenguajeDesc;
     }
-    public ArrayList<String> GetConocimiento(String C) throws SQLException
+    public ArrayList<String> GetConocimiento(String C) throws SQLException//Obtener Herr Conocimiento
     {
         String Consulta;
         Statement st=con.createStatement();
@@ -115,6 +117,80 @@ public class Consultas extends conexion{
                  LenguajeDesc.add(rs.getString("Contenido"));
          }
         return LenguajeDesc;
+    }
+    
+    public List<String> Listar(String tabla,String argumentos) throws SQLException{//List para Listar combobox
+        
+        List<String> lista = new ArrayList<>();
+        
+        try
+        {
+        Statement st=con.createStatement();
+         ResultSet rs= null;     
+         String Consulta="select "+tabla+".Nombre from "+argumentos;
+         rs = st.executeQuery(Consulta);
+         
+        while (rs.next())
+        {
+            lista.add(rs.getString("Nombre"));
+        }
+        return lista;
+        }
+        catch(SQLException E)
+        {
+            
+            return lista;
+        }
+    }
+    
+    //Enviar comentarios
+    public boolean SendFeed(String Autor,String Texto,String Seccion,String SubSeccion) throws SQLException{
+        boolean estado = false;
+        PreparedStatement pst = null;
+        try
+         {
+            String Consulta="insert into RetroalimentacionTexto (Asunto,Comentario,Autor) values (?,?,?)";
+            pst = getconexion().prepareStatement(Consulta);
+            pst.setString(1, "Seccion: "+Seccion+" SubSeccion: "+SubSeccion);
+            pst.setString(2,Texto);
+            pst.setString(3,Autor);
+        if (pst.executeUpdate() == 1)
+         {
+          estado = true;   
+         }//fin if
+         //------------------------------
+        }//fin try
+        //------------------------------
+        catch(SQLException ex)
+        {
+          System.out.println("Error en SQL" + ex.toString());
+        }//fin catch
+        
+        return estado;
+    }
+    //Feedback por boton por articulo
+    public boolean FeedBoton(String Util,String Articulo) throws SQLException{
+        boolean estado = false;
+        PreparedStatement pst = null;
+        try
+         {
+            String Consulta="insert into RetroalimentacionBoton (Util,Articulo) values (?,?)";
+            pst = getconexion().prepareStatement(Consulta);
+            pst.setString(1, Util );
+            pst.setString(2,Articulo);
+        if (pst.executeUpdate() == 1)
+         {
+          estado = true;   
+         }//fin if
+         //------------------------------
+        }//fin try
+        //------------------------------
+        catch(SQLException ex)
+        {
+          System.out.println("Error en SQL" + ex.toString());
+        }//fin catch
+        
+        return estado;
     }
     
     public static void main(String [] args) throws SQLException{

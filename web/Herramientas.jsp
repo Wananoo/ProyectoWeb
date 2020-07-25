@@ -25,6 +25,7 @@
       Contacto</a>
     <a href="Acerca.jsp"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
         Acerca de</a>
+    <br><br><br><br><br><a style="font-size: 15px;" href="https://www.paypal.com/paypalme/Wananoo?locale.x=es_XC">Donar</a>
 </div>
         <div class="main">
         <h1>Herramientas</h1>
@@ -63,9 +64,10 @@
         </form>
         <br>
         <%
+            boolean carga = false;
             String HerrS = request.getParameter("Herr");
-            if (!(HerrS==null)&&(!HerrS.equals("Historia"))&&(!HerrS.equals("Conceptos clave")))
-            {%>
+            if (HerrS!=null&&!HerrS.equals("Historia")&&!HerrS.equals("Conceptos clave"))
+            {carga=true;%>
             <p>Herramienta: ${Herramienta}</p>
             <p>Enlace: <a href="" onclick="this.href='${Enlace}'"> Enlace Oficial </a></p>
             <p>Descripcion de ${Herramienta}: <br> ${Descripcion}</p><br>
@@ -76,12 +78,21 @@
                 {
                     %> <p>Comandos de ${Herramienta}: <br> ${Comandos}</p><br><%
                 }
-               }
-               else
-                {
+            }
+            else if (HerrS!=null&&(HerrS.equals("Historia")||HerrS.equals("Conceptos clave")))
+            {carga=true;
             %>
             <p>Conocimiento: ${Herramienta}</p><br>
             <p>${Contenido}</p><br>
+            <%}
+            if (carga)
+            {
+            %><form action="EnviarFeed" method="post" class="text-right"><p >Ha sido util esta informacion?</p>
+                 <input type="hidden" id="Art" name="Art" value="${Herramienta}">
+                 <input type="hidden" id="jsp" name="jsp" value="Herramientas.jsp">
+                <input  style="background-color:#383838;color:white;" type="submit" name="Si" value="Si"/>
+                <input  style="background-color:#383838;color:white;" type="submit" name="No" value="No"/>
+                </form>
             <%}%>
         </div>
     </body>

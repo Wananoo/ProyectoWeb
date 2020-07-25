@@ -27,6 +27,7 @@
       Contacto</a>
     <a href="Acerca.jsp"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
         Acerca de</a>
+            <br><br><br><br><br><a style="font-size: 15px;" href="https://www.paypal.com/paypalme/Wananoo?locale.x=es_XC">Donar</a>
 </div>
         <div class="main">
         <h1>DevHelp</h1>
@@ -36,6 +37,9 @@
                 Bienvenido/a a DevHelp!
             </p>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="Configurar.jsp">Configurar MySQL</a>
         </div>
+        
     </body>
 </html>

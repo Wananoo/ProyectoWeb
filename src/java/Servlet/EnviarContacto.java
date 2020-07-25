@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author wanan
  */
-@WebServlet(name = "ObtenerL", urlPatterns = {"/ObtenerL"})
-public class ObtenerL extends HttpServlet {
+@WebServlet(name = "EnviarContacto", urlPatterns = {"/EnviarContacto"})
+public class EnviarContacto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,17 +36,16 @@ public class ObtenerL extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ObtenerL</title>");            
+            out.println("<title>Servlet EnviarContacto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ObtenerL at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EnviarContacto at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -66,25 +64,33 @@ public class ObtenerL extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Consultas cons = new Consultas();
-        String Leng = request.getParameter("Leng");
-        ArrayList<String> Desc = new ArrayList<String>();
-        Desc.add("");Desc.add("");
-        try {
-            Desc = cons.GetLeng(Leng);
-        } catch (SQLException ex) {
-            
-            Desc.clear();Desc.add("catch");Desc.add("catch");
-            Logger.getLogger(ObtenerL.class.getName()).log(Level.SEVERE, null, ex);
-            
+        String Autor = request.getParameter("autor");
+        String Texto = request.getParameter("texto");
+        String Seccion = request.getParameter("Seccion");
+        String SubSeccion = request.getParameter("SubSeccionesDrop");
+        boolean exito = false;
+        if (Autor.equals("")||Texto.equals(""))
+        {
+            request.getRequestDispatcher("Contacto.jsp").forward(request, response);
         }
-        request.setAttribute("Lenguaje",Desc.get(0));
-        request.setAttribute("Dificultad",Desc.get(1));
-        request.setAttribute("Sintaxis",Desc.get(2).replaceAll("\\.\\s?", "<br>"));
-        request.setAttribute("Ventajas",Desc.get(3).replaceAll("\\.\\s?", "<br>"));
-        request.setAttribute("Documentacion",Desc.get(4));
-        request.getRequestDispatcher("Lenguajes.jsp").forward(request, response);
+        else
+        {
+        try {
+             exito = cons.SendFeed(Autor,Texto,Seccion,SubSeccion);
+        } catch (SQLException ex) {
+            Logger.getLogger(EnviarContacto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (exito)
+        {
+            request.setAttribute("user",Autor);
+            request.getRequestDispatcher("Enviado.jsp").forward(request, response);
+        }
+        else
+        {
+            request.getRequestDispatcher("Contacto.jsp?error=1").forward(request, response);
+        }
     }
-
+    }
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -96,7 +102,6 @@ public class ObtenerL extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         processRequest(request, response);
     }
 

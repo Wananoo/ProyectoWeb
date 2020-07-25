@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Jul 18, 2020, 8:59:03 PM
+    Document   : Configurar
+    Created on : Jul 25, 2020, 12:08:01 AM
     Author     : wanan
 --%>
 
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DevHelp</title>
+        <title>Configurar</title>
     </head>
     
     <body>
@@ -27,19 +27,20 @@
       Contacto</a>
     <a href="Acerca.jsp"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
         Acerca de</a>
-            <br><br><br><br><br><a style="font-size: 15px;" href="https://www.paypal.com/paypalme/Wananoo?locale.x=es_XC">Donar</a>
+   <br><br><br><br><br><a style="font-size: 15px;" href="https://www.paypal.com/paypalme/Wananoo?locale.x=es_XC">Donar</a>
 </div>
         <div class="main">
-        <h1>DevHelp</h1>
+        <h1>Ingrese su usuario y contraseña de MySQL</h1>
         <br>
         <div>
             <p class="subtit">
-                Bienvenido/a a DevHelp!
+            <form method="post">
+                Usuario (root): <input placeholder="user" style="background-color:#383838;color:white;" type="text" name="user" />
+                Contraseña MySQL: <input placeholder="pass" style="background-color:#383838;color:white;" type="password" name="pass" />
+                <input  style="background-color:#383838;color:white;" type="submit" formaction="ConfigurarSQL" value="Conectar"/>
+            </form>
             </p>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="Configurar.jsp">Configurar MySQL</a>
         </div>
-        
     </body>
 </html>

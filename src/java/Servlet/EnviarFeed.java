@@ -9,10 +9,8 @@ import Modelo.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author wanan
  */
-@WebServlet(name = "ObtenerL", urlPatterns = {"/ObtenerL"})
-public class ObtenerL extends HttpServlet {
+@WebServlet(name = "EnviarFeed", urlPatterns = {"/EnviarFeed"})
+public class EnviarFeed extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +42,10 @@ public class ObtenerL extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ObtenerL</title>");            
+            out.println("<title>Servlet EnviarFeed</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ObtenerL at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EnviarFeed at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,24 +63,7 @@ public class ObtenerL extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Consultas cons = new Consultas();
-        String Leng = request.getParameter("Leng");
-        ArrayList<String> Desc = new ArrayList<String>();
-        Desc.add("");Desc.add("");
-        try {
-            Desc = cons.GetLeng(Leng);
-        } catch (SQLException ex) {
-            
-            Desc.clear();Desc.add("catch");Desc.add("catch");
-            Logger.getLogger(ObtenerL.class.getName()).log(Level.SEVERE, null, ex);
-            
-        }
-        request.setAttribute("Lenguaje",Desc.get(0));
-        request.setAttribute("Dificultad",Desc.get(1));
-        request.setAttribute("Sintaxis",Desc.get(2).replaceAll("\\.\\s?", "<br>"));
-        request.setAttribute("Ventajas",Desc.get(3).replaceAll("\\.\\s?", "<br>"));
-        request.setAttribute("Documentacion",Desc.get(4));
-        request.getRequestDispatcher("Lenguajes.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -96,8 +77,29 @@ public class ObtenerL extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        processRequest(request, response);
+        Consultas cons = new Consultas();
+        String JSP = request.getParameter("jsp");
+        String Articulo = request.getParameter("Art");
+        boolean exito=false;
+        if (request.getParameter("Si") != null) {
+            try {
+                //Si button is clicked
+                exito=cons.FeedBoton("1", Articulo);
+            } catch (SQLException ex) {
+                Logger.getLogger(EnviarFeed.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+    } else if (request.getParameter("No") != null) {
+          //No button is clicked
+          
+          try {
+                //Si button is clicked
+                exito=cons.FeedBoton("0", Articulo);
+            } catch (SQLException ex) {
+                Logger.getLogger(EnviarFeed.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+        request.getRequestDispatcher(JSP).forward(request, response);
     }
 
     /**

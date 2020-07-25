@@ -26,6 +26,7 @@
       Contacto</a>
     <a href="Acerca.jsp"><img class="icono" width="30" height="25" src="ico/icono-acerca.png" alt="Herramientas">
         Acerca de</a>
+<br><br><br><br><br><a style="font-size: 15px;" href="https://www.paypal.com/paypalme/Wananoo?locale.x=es_XC">Donar</a>
 </div>
         <div class="main">
         <h1>Lenguajes</h1>
@@ -53,6 +54,12 @@
             <p>Sintaxis basica de ${Lenguaje}: <br> ${Sintaxis}</p><br>
             <p>Ventajas de ${Lenguaje}: <br> ${Ventajas}</p><br>
             <p> <a href="" onclick="this.href='${Documentacion}'">Documentacion Oficial de ${Lenguaje}:</a></p><br>
+            <form action="EnviarFeed" method="post" class="text-right"><p >Ha sido util esta informacion?</p>
+                 <input type="hidden" id="Art" name="Art" value="${Lenguaje}">
+                 <input type="hidden" id="jsp" name="jsp" value="Lenguajes.jsp">
+                <input  style="background-color:#383838;color:white;" type="submit" name="Si" value="Si"/>
+                <input  style="background-color:#383838;color:white;" type="submit" name="No" value="No"/>
+                </form>
             <%if(!LengS.equals("C#")){%>
             <iframe src="${Documentacion}" title="Documentacion" height="500" width="1000">
             <%}else{%><p>Contenido de Microsoft no Disponible</p><%}}

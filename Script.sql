@@ -40,8 +40,8 @@ Autor varchar(20) not null
 
 create table RetroalimentacionBoton
 (
-Util bit not null,
-Articulo int not null
+Util varchar(1) not null,
+Articulo varchar(30) not null
 );
 
 create table Conocimiento
@@ -126,15 +126,21 @@ insert into PropiedadLenguaje (Nombre,Descripcion,Lenguaje) Values
 ("Documentacion","https://docs.oracle.com/en/java/","Java"),
 ("Documentacion","https://docs.microsoft.com/en-us/dotnet/csharp/","C#");
 
-#23 jul y 24 jul
-select * from Lenguajes where Nombre ="Python";
-select * from PropiedadLenguaje where Lenguaje ="Python";
-select * from PropiedadLenguaje where Lenguaje = "Python" and Nombre="Sintaxis";
-select * from Herramientas;
-select * from Herramientas where Nombre = "Github";
-select * from PropiedadHerramienta;
-select * from PropiedadHerramienta where Herramienta ="Github";
-select * from PropiedadHerramienta where Herramienta ="ChromeDevTools";
-select * from PropiedadHerramienta where Herramienta ="Github" and Nombre = "Como usar";
+#23 jul  -  24 jul  SON PARA CASOS DE PRUEBAs
+#select * from Lenguajes where Nombre ="Python";
+#select * from PropiedadLenguaje;
+#select PropiedadLenguaje.Nombre from PropiedadLenguaje where Lenguaje ="Python";
+#select * from PropiedadLenguaje where Lenguaje = "Python" and Nombre="Sintaxis";
+#select * from Herramientas;
+#select * from Herramientas where Nombre = "Github";
+#select * from PropiedadHerramienta;
+#select * from PropiedadHerramienta where Herramienta ="Github";
+#select * from PropiedadHerramienta where Herramienta ="ChromeDevTools";
+#select * from PropiedadHerramienta where Herramienta ="Github" and Nombre = "Como usar";
 
-select * from Conocimiento;
+#select * from Conocimiento;
+#select Lenguajes.Nombre from Lenguajes;
+#select PropiedadHerramienta.Nombre from PropiedadHerramienta;
+
+#select * from RetroalimentacionTexto;
+#select * from RetroalimentacionBoton;
